@@ -1,7 +1,40 @@
 <aura:component>
-    <ol>
-        <li>Bug Spray</li>
-        <li>Bear Repellant</li>
-        <li>Goat Food</li>
-    </ol>
+    <aura:attribute name="items" type="Camping_Item__c[]" />
+    <aura:attribute name="newItem" type="Camping_Item__c"
+    default="{'sObjectType': 'Camping_Item__c',
+    'Quantity__c': '0',
+    'Price__c': '0',
+    'Packed__c': false}"/>
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+            <div aria-labelledby="newcampingform">
+                <!-- Box -->
+                <fieldset class="slds-box slds-theme--default slds-container--small">
+                    <legend id="newcampingform" class="slds-text-heading-small slds-p-vertical--medium">
+                        Camping List
+                    </legend>
+                    <!-- Create new Item Form -->
+                    <form class="slds-form_stacked">
+                        <lightning:input aura:id="campingform" label="Name" value="{!v.newItem.Name}" required="true" />
+                        <lightning:input aura:id="campingform" label="Quantity" type="number" value="{!v.newItem.Quantity__c}" min="1" required="true" messageWhenRangeUnderflow="Enter a value that's at least 1."/>
+                        <lightning:input aura:id="campingform" label="Price" type="number" value="{!v.newItem.Price__c}" formatter="currency" />
+                        <lightning:input aura:id="campingform" label="Packed?" type="checkbox" checked="{!v.newItem.Packed__c}" value="{!v.newItem.Packed__c}" />
+
+                        <lightning:button class="slds-m-top_medium" label="Create Camping Item" variant="brand" onclick="{!c.clickCreateItem}" />
+                    </form>
+                    <!-- Create new Item Form -->
+                    <div class="slds-card slds-p-top--medium">
+                        <header>
+                            <h3>Items</h3>
+                        </header>
+
+                        <aura:iteration items="{!v.items}" var="campitem">
+                            <c:campingListItem item="{!campitem}" />
+                        </aura:iteration>
+                    </div>
+                </fieldset>
+                <!-- Box -->
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
 </aura:component>	
