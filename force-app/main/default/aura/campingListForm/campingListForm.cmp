@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
     
     <aura:registerEvent name="addItem" type="c:addItemEvent" />
 

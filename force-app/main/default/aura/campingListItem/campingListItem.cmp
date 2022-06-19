@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
     <aura:attribute name="item" type="Camping_Item__c" required="true"/>
     <lightning:formattedText value="{!v.item.Name}"/>
     <lightning:formattedNumber type="currency" value="{!v.item.Price__c}"/>

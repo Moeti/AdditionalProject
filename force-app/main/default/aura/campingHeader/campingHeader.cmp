@@ -1,4 +1,4 @@
-<aura:component>
+<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
     <lightning:layout class="slds-page-header" />
     <lightning:icon iconName="action:goal" alternativeText="Camping" />
     <h1 class="slds-text-heading--medium">Camping List</h1>
