@@ -16,12 +16,14 @@
         // Send action off to be executed
         $A.enqueueAction(action);
     },
-
+    //Create Item
     createItem: function(component, item) {
+        // Create the action
         var action = component.get("c.saveItem");
         action.setParams({
             "item": item
         });
+        // Add callback behavior for when response is received
         action.setCallback(this, function(response){
             var state = response.getState();
             if (state === "SUCCESS") {
@@ -30,9 +32,10 @@
                 component.set("v.Items", Items);
             }
         });
+        // Send action off to be executed
         $A.enqueueAction(action);
     },
-
+    //click function for Create Item
     clickCreateItem  : function(component, event, helper) {
     var validItem = component.find('newcampingform').reduce(function(validSoFar, inputCmp){
         // Show error messages for invalid fields
@@ -47,14 +50,15 @@
         console.log("Create item: " + JSON.stringify(newItem));
         helper.createItem(component, newItem);
     }},
-
+    //Add Item
     handleAddItem: function(component, event, helper) {
         var item = event.getParam("item");
+        // Create the action
         var action = component.get("c.saveItem");
         action.setParams({
             "item": item
         });
-
+        // Add callback behavior for when response is received
         action.setCallback(this, function(response){
             var state = response.getState();
             if(component.isValid() && state=== "SUCCESS")
@@ -62,6 +66,7 @@
             items.push(item);
             component.set("v.items", items)
         });
+        // Send action off to be executed
         $A.enqueueAction(action);
     }
 

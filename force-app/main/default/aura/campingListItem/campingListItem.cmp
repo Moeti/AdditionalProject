@@ -1,5 +1,6 @@
 <aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
     <aura:attribute name="item" type="Camping_Item__c" required="true"/>
+    <!--Camping List Item-->
     <lightning:formattedText value="{!v.item.Name}"/>
     <lightning:formattedNumber type="currency" value="{!v.item.Price__c}"/>
     <lightning:formattedNumber value="{!v.item.Quantity__c}"/>
@@ -8,4 +9,5 @@
                              name="Packed"
                              checked="{!v.item.Packed__c}" />
     <lightning:button label="Packed!" onclick="{!c.packItem}" />
+    <!--Camping List Item End-->
 </aura:component>	

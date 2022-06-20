@@ -1,4 +1,5 @@
 ({
+    //Create Item Helper
     clickCreateItem  : function(component, event, helper) {
         if(helper.validateItemForm(component))
         {

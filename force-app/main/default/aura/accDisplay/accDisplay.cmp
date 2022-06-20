@@ -21,6 +21,7 @@
                 <lightning:formattedPhone title="Phone" value="{!v.accountRecord.Phone}" /></p>
         </div>
     </lightning:card>
+    <!-- Display a lightning card with details about the record End-->
 
     <aura:if isTrue="{!not(empty(v.recordSaveError))}">
         <div class="recordError">

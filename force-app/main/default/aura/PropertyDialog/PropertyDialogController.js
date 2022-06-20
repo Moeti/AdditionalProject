@@ -1,9 +1,11 @@
 ({
+    //Load Record
     doInit : function(component, event, helper) {
         component.find("forceRecord").getNewRecord(
             "Property__c",
             null,
             false,
+            //  Get Record
             $A.getCallback(function() {
                 var rec = component.get("v.propertyRecord");
                 var error = component.get("v.recordError");
@@ -33,6 +35,7 @@
             );
         }        
     },
+    //Save Record
     saveRecord : function(component, event, helper) {
         var propBeds = parseInt(component.find('propBeds').get("v.value"), 10);
         var propBaths = parseInt(component.find('propBaths').get("v.value"), 10);
@@ -67,6 +70,7 @@
             }
         }));
     },
+    //Close propery modal
     cancelDialog: function(component, event, helper) {
         var recId = component.get("v.recordId");
         if(!recId) {

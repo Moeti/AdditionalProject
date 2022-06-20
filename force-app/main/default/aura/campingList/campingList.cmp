@@ -3,7 +3,7 @@
     <aura:handler name="addItem" event="c:addItemEvent" action="{!c.handleAddItem}" />
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     <aura:attribute name="items" type="Camping_Item__c[]" />
-    
+    <!--Camping List-->
     <lightning:layout>
         <lightning:layoutItem padding="around-small" size="6">
             <div aria-labelledby="newcampingform">
@@ -12,9 +12,12 @@
                     <legend id="newcampingform" class="slds-text-heading-small slds-p-vertical--medium">
                         Camping List
                     </legend>
-                    
-                    <c:campingListForm />
 
+                    <!--Camping List Form-->
+                    <c:campingListForm />
+                    <!--Camping List Form End-->
+
+                    <!--Camping List Items-->
                     <div class="slds-card slds-p-top--medium">
                         <header>
                             <h3>Items</h3>
@@ -24,9 +27,11 @@
                             <c:campingListItem item="{!campitem}" />
                         </aura:iteration>
                     </div>
+                    <!--Camping List Items-->
                 </fieldset>
-                <!-- Box -->
+                <!-- Box End-->
             </div>
         </lightning:layoutItem>
     </lightning:layout>
+    <!--Camping List End-->
 </aura:component>	

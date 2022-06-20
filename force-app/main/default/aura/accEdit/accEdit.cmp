@@ -20,7 +20,7 @@
             <lightning:button label="Save Account" variant="brand" onclick="{!c.handleSaveRecord}"/>
         </div>
     </lightning:card>
-
+<!-- Display edit record end-->
     <aura:if isTrue="{!not(empty(v.recordSaveError))}">
         <div class="recordError">
             {!v.recordSaveError}</div>

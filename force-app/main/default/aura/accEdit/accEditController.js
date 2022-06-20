@@ -1,4 +1,5 @@
 ({
+    //Save Record Function
     handleSaveRecord: function(component, event, helper) {
         component.find("recordEditor").saveRecord($A.getCallback(function(saveResult) {
             if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {

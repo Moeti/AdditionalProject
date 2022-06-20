@@ -9,6 +9,7 @@
                       mode="EDIT" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <c:PickListValues sObjectName="Property__c" fieldName="Status__c" picklistValues="{!v.picklistValues}" />
+    <!--Edit Property Modal-->
     <div aura:id="editDialog" role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
         <div class="slds-modal__container">
             <div class="slds-modal__header">
@@ -31,5 +32,6 @@
             </div>
         </div>
     </div>
+    <!--Edit Property Modal-->
     <div aura:id="overlay" class="slds-backdrop slds-backdrop--open"></div>
 </aura:component>

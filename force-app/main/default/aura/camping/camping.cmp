@@ -1,4 +1,6 @@
 <aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">
+    <!--Header-->
     <c:campingHeader />
+    <!--Camping List-->
     <c:campingList />
 </aura:component>	

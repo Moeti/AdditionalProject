@@ -1,4 +1,5 @@
 ({
+    //Go to selected property
     navigateTo: function(component, recId) {
         var navEvt = $A.get("e.force:navigateToSObject");
         navEvt.setParams({
